@@ -1,42 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <title>Startup R!ght</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/index.css"/>
 
-    <link rel="stylesheet" href="../static/css/index.css" />
-  </head>
+</head>
 
-  <body>
-    <div id="container">
-      <a href="./index.html" id="logo-link"><img src="./images/logo.png" id="logo"></a>
-      <br>
-      <input type="search" name="search" id="search" placeholder="Please type your idea here.">
-      <select id="dropdown">
-        <option value="movieOption">Technology</option>
-      </select>
-      <input type="submit" name="submit" id="submit" value="Roast">
+<body class="d-flex flex-column">
+    <div class="main container d-flex justify-content-center">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+
+                <div id="page-content" class="col-md-7">
+                    <form>
+                        <div class="form-row col-md-auto justify-content-center" id="logo-link">
+                            <a href="./index"><img src="/static/images/logo.svg" id="logo"/></a>
+                        </div>
+                        <div class="form-row col-md-auto" id="search-box">
+                            <input type="search" name="search" id="search" placeholder="Please type your idea here."
+                                   class="form-control"/>
+                        </div>
+                        <div class="form-row col-md-12" id="dropdown-box">
+                            <select class="form-control" id="dropdown">
+                                <option value="movieOption">Technology</option>
+                            </select>
+                        </div>
+                        <div class="form-row col-md-12" id="submit-box">
+                            <button type="button" id="submit" value="Roast" class="form-row btn btn-primary btn-lg btn-block">Roast
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-7" id="feedbackButton">
+                    <a href="https://forms.gle/zyxjkWV21REDfrF48" target="_blank">
+                        <button class="submit-button btn btn-primary ">Give Feedback</button>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <button id="myButton" class="float-left submit-button" >Give Feedback</button>
-
-    <script type="text/javascript">
-        document.getElementById("myButton").onclick = function () {
-        location.href = "www.google.com";
-    };
-    </script>
-
-    <footer>
-        <p>Note: This website does not store any of your inputs.</p>
-        <p>In case of any questions, please contact me on 2270488p@student.gla.ac.uk.</p>
-        <p>Copyright &copy; 2020</p>
+    <footer class="py-2 bg-dark text-white-50">
+        <div class="container text-center">
+            <div>
+                <small>Note: This website does not store any of your inputs.</small>
+            </div>
+            <div>
+                <small>In case of any questions, please contact me on
+                    <a href="mailto:2270488p@student.gla.ac.uk">2270488p@student.gla.ac.uk.</a>
+                </small>
+            </div>
+            <div>
+                <small>Copyright &copy; 2020</small>
+            </div>
+        </div>
     </footer>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./templates/static/javascript/index.js"></script>
+<!--script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script-->
 
-  </body>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<!--script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script-->
+<script type="text/javascript" src="/static/javascript/index.js"></script>
+
+</body>
 </html>

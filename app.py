@@ -21,7 +21,9 @@ def get_idea():
     return {"idea": idea, "reasons": reason}
 
 
-@app.route('/index')
+@app.route('/')
+@app.route("/index")
+@app.route("/home")
 def index(name=None):
     return render_template('layouts/index.html', name=name)
 
@@ -32,4 +34,4 @@ def page_not_found(error):
 
 
 if __name__ == '__main__':
-    app.run(port=8081)
+    app.run(host="0.0.0.0", port=8080)

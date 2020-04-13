@@ -21,8 +21,8 @@ def get_vectors(*strs):
 
 
 # Removes non-alphabetical characters
-def clean(msg):
-    words = nltk.word_tokenize(msg)
+def clean(description):
+    words = nltk.word_tokenize(description)
     words = [word.lower() for word in words if word.isalpha()]
     lemmatizer = nltk.WordNetLemmatizer()
     tokens = [lemmatizer.lemmatize(token) for token in words]
@@ -30,25 +30,27 @@ def clean(msg):
     tokens = [token for token in tokens if token not in stopwords]
     return " ".join(tokens)
 
+
 # Compares ideas and returns similarity percentage
-def compare(idea, msg):
-    # if, for some reason, it returns none, just return 0%
-    if msg is None:
+def compare(new_idea, description):
+    # If for some reason it returns none, just return 0%
+    if description is None:
         return 0
     return (
-            get_cosine_sim(idea, msg)[0][1] * 100
+            get_cosine_sim(new_idea, description)[0][1] * 100
     )
 
+
 # Returns True for an impressive idea and False for a bad idea and the reason if False
-def idea_check(msg):
-    msg = clean(msg)
+def idea_check(user_input):
+    user_input = clean(user_input)
     highest = 0
     name, reason = ('', '')
-    # simple "find highest" algorithm
+    # Simple "find highest" algorithm
     data = ideas_scripts.mine.ideas.get_ideas()
     for i in data:
-        # { 'name': XXX, 'description': XXX, 'reason': XXX}
-        result = compare(i['description'], msg)
+        # Data is in format {'name': XXX, 'description': XXX, 'reason': XXX}
+        result = compare(i['description'], user_input)
         if result > highest:
             highest = result
             name = (i['name'])
@@ -63,6 +65,8 @@ def idea_check(msg):
                 "it seems like your idea is similar to another startup called "
                 + name
                 + ", which failed due to the following reason: "
+                + """ 
+                """
                 + reason.lower()
         )
 
@@ -74,5 +78,3 @@ def main():
     print(idea_check(idea))
 
 
-if __name__ == "__main__":
-    main()
