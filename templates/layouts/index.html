@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Startup R!ght</title>
+
+    <link rel="stylesheet" href="../static/css/index.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <a href="./index.html" id="logo-link"><img src="./images/logo.png" id="logo"></a>
+      <br>
+      <input type="search" name="search" id="search" placeholder="Please type your idea here.">
+      <select id="dropdown">
+        <option value="movieOption">Technology</option>
+      </select>
+      <input type="submit" name="submit" id="submit" value="Roast">
+    </div>
+
+    <button id="myButton" class="float-left submit-button" >Give Feedback</button>
+
+    <script type="text/javascript">
+        document.getElementById("myButton").onclick = function () {
+        location.href = "www.google.com";
+    };
+    </script>
+
+    <footer>
+        <p>Note: This website does not store any of your inputs.</p>
+        <p>In case of any questions, please contact me on 2270488p@student.gla.ac.uk.</p>
+        <p>Copyright &copy; 2020</p>
+    </footer>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./templates/static/javascript/index.js"></script>
+
+  </body>
+</html>
