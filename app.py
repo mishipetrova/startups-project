@@ -2,6 +2,9 @@ from flask import Flask, request, render_template
 from flask_cors import CORS, cross_origin
 import algorithm
 
+nltk.download("punkt")
+nltk.download("wordnet")
+
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 
